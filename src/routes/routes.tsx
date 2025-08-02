@@ -5,7 +5,8 @@ import Contact from "../pages/Contact";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import AdminLayout from "../components/layout/AdminLayout";
-import { adminPaths, adminRoutes } from "./admin.routes";
+import { adminPaths } from "./admin.routes";
+import { routeGenerator } from "../utils/routeGenerator";
 
 const router = createBrowserRouter([
     {
@@ -25,17 +26,17 @@ const router = createBrowserRouter([
     {
         path: "/admin",
         element: <AdminLayout />,
-        children: adminRoutes,
+        children: routeGenerator(adminPaths),
     },
     {
         path: "/faculty",
         element: <AdminLayout />,
-        children: adminRoutes,
+        children: routeGenerator(adminPaths),
     },
     {
         path: "/student",
         element: <AdminLayout />,
-        children: adminRoutes,
+        children: routeGenerator(adminPaths),
     },
     {
         path: "/login",
