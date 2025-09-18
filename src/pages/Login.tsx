@@ -7,7 +7,7 @@ const Login = () => {
 
     const { register, handleSubmit } = useForm({
         defaultValues: {
-            id: 'A-002',
+            id: 'A-0002',
             password: 'admin123'
         }
     });
@@ -19,7 +19,7 @@ const Login = () => {
 
     const onSubmit = (data) => {
         const userInfo = {
-            id: data.userId,
+            id: data.id,
             password: data.password
         };
         login(userInfo)
@@ -32,7 +32,7 @@ const Login = () => {
             </div>
             <div>
                 <label htmlFor="password">Password: </label>
-                <input type="password" id="password"  {...register('password')} />
+                <input id="password"  {...register('password')} />
             </div>
             <Button htmlType='submit'>Login</Button>
         </form >
